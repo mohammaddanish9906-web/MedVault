@@ -514,8 +514,8 @@ export default function App() {
   const [uniFilter, setUniFilter] = useState('all');
   const [hyOnly, setHyOnly] = useState(false);
   const [progress, setProgress] = useState({});
-
-  useEffect(() => {
+const [adminMode, setAdminMode] = useState(false);
+const [showAdmin, setShowAdmin] = useState(false);  useEffect(() => {
     try {
       const saved = localStorage.getItem('mcq-progress');
       if (saved) setProgress(JSON.parse(saved));
@@ -562,6 +562,24 @@ export default function App() {
         {tab === 'more' && moreSub === 'mnemonics' && <MnemonicsView />}
         {tab === 'more' && moreSub === 'diagrams' && <DiagramsView diagram={diagram} setDiagram={setDiagram} />}
       </main>
+{adminMode && (
+  <button
+    onClick={() => setShowAdmin(!showAdmin)}
+    style={{
+      position: 'fixed',
+      right: 20,
+      bottom: 90,
+      background: '#A23B3B',
+      color: 'white',
+      border: 'none',
+      borderRadius: 12,
+      padding: '10px 16px',
+      zIndex: 9999
+    }}
+  >
+    Admin
+  </button>
+)}
       <BottomNav tab={tab} onNavigate={changeTab} />
     </div>
   );
