@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">MedPrep</string>
-    <string name="title_activity_main">MedPrep</string>
-    <string name="package_name">com.medprep.app</string>
-    <string name="custom_url_scheme">com.medprep.app</string>
+    <string name="app_name">MedVault</string>
+    <string name="title_activity_main">MedVault</string>
+    <string name="package_name">com.medVault.app</string>
+    <string name="custom_url_scheme">com.medVault.app</string>
 </resources>
